@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Garissa University — QR Tour</title>
+  <meta name="description" content="A one-minute look at life at Garissa University. Scan the stone beside the I ❤ GARISSA UNIVERSITY board.">
+  <meta name="theme-color" content="#3A2A1C">
+
+  <!-- Social preview (WhatsApp, Facebook, X) — add images/og-cover.jpg (1200×630) -->
+  <meta property="og:title" content="You're at the heart of Garissa University">
+  <meta property="og:description" content="A one-minute look at life at GaU.">
+  <meta property="og:image" content="images/og-cover.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ 1. HERO — "You're standing here" ============ -->
+  <header class="hero">
+    <div class="hero__bar">
+      <span class="logo">GaU</span>
+      <nav class="lang" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="sw" aria-pressed="false">SW</button>
+        <button type="button" data-lang="so" aria-pressed="false">SO</button>
+      </nav>
+    </div>
+
+    <figure class="photo hero__photo" data-label="Hero: the I ❤ GARISSA UNIVERSITY board at golden hour">
+      <img src="images/hero-board.jpg" alt="The I love Garissa University board at sunset" fetchpriority="high">
+    </figure>
+
+    <div class="hero__text">
+      <p class="eyebrow" data-i18n="hero.eyebrow">Karibu · Welcome</p>
+      <h1 data-i18n="hero.title">You're at the heart of Garissa University.</h1>
+      <p class="lead" data-i18n="hero.lead">A one-minute look at life here.</p>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ 2. A DAY AT GaU — swipe cards ============ -->
+    <section class="day" aria-labelledby="day-title">
+      <div class="section-head">
+        <h2 id="day-title" data-i18n="day.title">A day at GaU</h2>
+        <span class="hint" aria-hidden="true" data-i18n="day.hint">swipe →</span>
+      </div>
+      <ol class="day__strip">
+        <li class="card">
+          <span class="time">6:30 AM</span>
+          <figure class="photo" data-label="Sunrise over campus"><img src="images/day/01-sunrise.jpg" alt="Sunrise over campus" loading="lazy"></figure>
+          <p data-i18n="day.c1">Sunrise over campus</p>
+        </li>
+        <li class="card">
+          <span class="time">8:00 AM</span>
+          <figure class="photo" data-label="Lectures begin"><img src="images/day/02-lectures.jpg" alt="Students in a lecture hall" loading="lazy"></figure>
+          <p data-i18n="day.c2">Lectures begin</p>
+        </li>
+        <li class="card">
+          <span class="time">11:00 AM</span>
+          <figure class="photo" data-label="The library"><img src="images/day/03-library.jpg" alt="Students studying in the library" loading="lazy"></figure>
+          <p data-i18n="day.c3">Quiet hours in the library</p>
+        </li>
+        <li class="card">
+          <span class="time">1:00 PM</span>
+          <figure class="photo" data-label="Lunch at the cafeteria"><img src="images/day/04-lunch.jpg" alt="Friends having lunch" loading="lazy"></figure>
+          <p data-i18n="day.c4">Lunch at the cafeteria</p>
+        </li>
+        <li class="card">
+          <span class="time">5:00 PM</span>
+          <figure class="photo" data-label="Sports ground"><img src="images/day/05-sports.jpg" alt="Students playing on the sports ground" loading="lazy"></figure>
+          <p data-i18n="day.c5">Evening on the sports ground</p>
+        </li>
+        <li class="card">
+          <span class="time">9:00 PM</span>
+          <figure class="photo" data-label="Hostel life"><img src="images/day/06-hostel.jpg" alt="Evening at the hostels" loading="lazy"></figure>
+          <p data-i18n="day.c6">Hostel life</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ============ 3. MANY FAITHS, MANY CULTURES ============ -->
+    <!-- TODO: confirm every faith group / club with the Dean of Students before publishing. Give each equal space. -->
+    <section class="panel culture" aria-labelledby="culture-title">
+      <h2 id="culture-title"><span data-i18n="culture.title">Many faiths. Many cultures.</span> <span class="accent" data-i18n="culture.one">One GaU.</span></h2>
+      <div class="culture__grid">
+        <figure class="culture__item"><div class="photo" data-label="Places of worship"><img src="images/culture/01-worship.jpg" alt="[Describe photo]" loading="lazy"></div><figcaption>[Places of worship on campus]</figcaption></figure>
+        <figure class="culture__item"><div class="photo" data-label="Cultural week"><img src="images/culture/02-cultural-week.jpg" alt="[Describe photo]" loading="lazy"></div><figcaption>[Cultural week / festival]</figcaption></figure>
+        <figure class="culture__item"><div class="photo" data-label="Traditional dress day"><img src="images/culture/03-dress-day.jpg" alt="[Describe photo]" loading="lazy"></div><figcaption>[Traditional dress day]</figcaption></figure>
+      </div>
+      <p data-i18n="culture.body">Students from [communities / counties / countries — verified] study, pray and celebrate side by side here.</p>
+      <ul class="chips">
+        <li>[Faith group / union]</li>
+        <li>[Faith group / union]</li>
+        <li>[Cultural club]</li>
+        <li>[Community association]</li>
+      </ul>
+    </section>
+
+    <!-- ============ 4. PROUDLY GaU — facts + one voice ============ -->
+    <section class="panel proud" aria-labelledby="proud-title">
+      <h2 id="proud-title" data-i18n="proud.title">Proudly GaU</h2>
+      <dl class="facts">
+        <div><dt>2011</dt><dd data-i18n="proud.f1">Founded as a constituent college of Moi University</dd></div>
+        <div><dt>2017</dt><dd data-i18n="proud.f2">Awarded its university charter</dd></div>
+      </dl>
+      <blockquote class="voice">
+        <figure class="photo photo--avatar" data-label="Face"><img src="images/voices/01.jpg" alt="" loading="lazy"></figure>
+        <div>
+          <p>“[One real student quote — collected with written permission]”</p>
+          <cite>— [Name], [Course], Year [X]</cite>
+        </div>
+      </blockquote>
+    </section>
+
+    <!-- ============ 5. PHOTO SPOT ============ -->
+    <section class="panel spot" aria-labelledby="spot-title">
+      <div class="spot__head">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>
+        <h2 id="spot-title" data-i18n="spot.title">Strike a pose at the board.</h2>
+      </div>
+      <p><span data-i18n="spot.body">Turn around — share your photo with</span> <strong>#ILoveGaU</strong></p>
+      <button type="button" class="btn btn--light" id="share-btn" data-i18n="spot.btn">Share this page</button>
+      <p class="toast" id="toast" role="status" aria-live="polite"></p>
+    </section>
+
+  </main>
+
+  <!-- ============ 6. FOOTER — hand-off to the official site ============ -->
+  <footer class="footer">
+    <a class="btn btn--dark" href="https://gau.ac.ke" rel="noopener">
+      <span data-i18n="footer.cta">Want to study here? Visit gau.ac.ke</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <p class="credit">[Project name] · by Team [Name] · Concept &amp; design: Majid · [Approved by]</p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
