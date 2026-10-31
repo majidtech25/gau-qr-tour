@@ -18,7 +18,7 @@ at Garissa University (GaU), then hands them to the official site
 
 - Plain **HTML + CSS + vanilla JS**. **No frameworks, no npm, no build step.**
 - Hosted on **GitHub Pages** from `main` / root. Whatever is on `main` is live.
-- Only external request allowed: Google Fonts. No trackers, ads or third-party scripts.
+- Only external requests allowed: Google Fonts and **GoatCounter** (the cookieless scan counter, one script tag at the end of `index.html`). No other trackers, ads or third-party scripts.
 
 ## File map
 
@@ -63,6 +63,8 @@ at Garissa University (GaU), then hands them to the official site
 - The stone QR must point to a **university-owned address** (e.g. `tour.gau.ac.ke`), never `github.io` and never a paid "dynamic QR" service.
 - The `github.io` address is for the laminated **pilot only**.
 - Never rename or move `index.html`, because the QR depends on the address staying the same.
+- Every printed QR carries a tag so its scans can be counted: pilot = `?campaign=pilot&ref=qr`, stone = `?campaign=stone&ref=qr`. Links people share (the Share button) drop the tag, so shares aren't counted as scans.
+- Pilot files live in `pilot/`. Regenerate them with `python tools/make_qr.py <url>` and never edit the PNG/SVG by hand.
 
 ## Git workflow
 
