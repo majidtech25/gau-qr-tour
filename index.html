@@ -30,9 +30,30 @@
       </nav>
     </div>
 
-    <figure class="photo hero__photo" data-label="Hero: the I ❤ GARISSA UNIVERSITY board at golden hour">
-      <img src="images/hero-board.jpg" alt="The I love Garissa University board at sunset" fetchpriority="high">
-    </figure>
+    <!-- Hero slideshow: the board from different angles and times of day.
+         Without JS (or with reduced motion) only the first slide shows. -->
+    <div class="hero__slides">
+      <figure class="photo slide is-active" data-label="Board at sunrise, front view">
+        <img src="images/hero/01-sunrise-front.jpg" alt="The I love Garissa University board at sunrise" fetchpriority="high">
+        <figcaption class="slide__tag" data-i18n="hero.s1">Sunrise</figcaption>
+      </figure>
+      <figure class="photo slide" data-label="Board in the afternoon, side angle">
+        <img src="images/hero/02-afternoon-side.jpg" alt="The board seen from the side in afternoon light" decoding="async">
+        <figcaption class="slide__tag" data-i18n="hero.s2">Afternoon</figcaption>
+      </figure>
+      <figure class="photo slide" data-label="Board at golden hour, students posing">
+        <img src="images/hero/03-golden-students.jpg" alt="Students posing at the board at golden hour" decoding="async">
+        <figcaption class="slide__tag" data-i18n="hero.s3">Golden hour</figcaption>
+      </figure>
+      <figure class="photo slide" data-label="Board at night, lit up">
+        <img src="images/hero/04-night-lit.jpg" alt="The board lit up at night" decoding="async">
+        <figcaption class="slide__tag" data-i18n="hero.s4">Night</figcaption>
+      </figure>
+      <button type="button" class="slides__toggle" aria-pressed="false" aria-label="Pause slideshow" hidden>
+        <svg class="icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
 
     <div class="hero__text">
       <p class="eyebrow" data-i18n="hero.eyebrow">Karibu · Welcome</p>

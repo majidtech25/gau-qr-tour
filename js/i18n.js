@@ -12,6 +12,12 @@ window.I18N = {
     "hero.eyebrow": "Karibu · Welcome",
     "hero.title":   "You're at the heart of Garissa University.",
     "hero.lead":    "A one-minute look at life here.",
+    "hero.s1":      "Sunrise",
+    "hero.s2":      "Afternoon",
+    "hero.s3":      "Golden hour",
+    "hero.s4":      "Night",
+    "hero.pause":   "Pause slideshow",
+    "hero.play":    "Play slideshow",
 
     "day.title": "A day at GaU",
     "day.hint":  "swipe →",
