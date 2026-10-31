@@ -10,6 +10,10 @@
   --ink:       #1F1A14;  /* main text */
   --ink-soft:  #5C4D3D;  /* secondary text */
   --earth:     #3A2A1C;  /* hero background */
+  --earth-2:   #4A3727;  /* hero photo placeholder */
+  --sand-muted:#E9DCC8;  /* placeholder text on dark */
+  --overlay:   rgba(0, 0, 0, .55); /* tags/buttons over photos */
+  --sun-glow:  #FDBA74;  /* focus ring, eyebrow text */
   --sun:       #C2410C;  /* accent (orange) */
   --sun-text:  #9A3412;  /* accent text on light */
   --sun-soft:  #FDEBD8;  /* chip background */
@@ -97,8 +101,46 @@ a { color: var(--sun-text); }
 }
 .lang button[aria-pressed="true"] { background: var(--sand); color: var(--earth); font-weight: 700; }
 
-.hero__photo { height: 38svh; min-height: 200px; border-radius: 16px; background: #4A3727; }
-.hero__photo.is-missing::before { color: #E9DCC8; }
+/* Hero slideshow: slides stack and crossfade */
+.hero__slides {
+  position: relative;
+  height: 38svh; min-height: 200px;
+  border-radius: 16px; overflow: hidden;
+  background: var(--earth-2);
+}
+.slide {
+  position: absolute; inset: 0;
+  border-radius: 0; background: var(--earth-2);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+.slide.is-active { opacity: 1; }
+.slide.is-missing::before { color: var(--sand-muted); }
+
+.slide__tag {
+  position: absolute; left: 12px; bottom: 12px;
+  padding: 4px 10px; border-radius: 12px;
+  background: var(--overlay); color: #fff;
+  font-size: 12px; font-weight: 700; letter-spacing: .5px;
+}
+
+.slides__toggle {
+  position: absolute; right: 10px; top: 10px;
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 0; background: var(--overlay); color: #fff;
+  display: grid; place-items: center; cursor: pointer;
+}
+.slides__toggle[hidden] { display: none; }
+.slides__toggle .icon-play { display: none; }
+.slides__toggle[aria-pressed="true"] .icon-play { display: block; }
+.slides__toggle[aria-pressed="true"] .icon-pause { display: none; }
+.slides__toggle:focus-visible { outline: 3px solid var(--sun-glow); outline-offset: 2px; }
+
+/* Slow zoom on the visible slide ("Ken Burns"), only if motion is OK */
+@media (prefers-reduced-motion: no-preference) {
+  .slide.is-active img { animation: hero-zoom 6s ease-out forwards; }
+}
+@keyframes hero-zoom { from { transform: scale(1); } to { transform: scale(1.06); } }
 
 .hero__text { display: flex; flex-direction: column; gap: 10px; }
 .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #FDBA74; }
