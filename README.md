@@ -53,6 +53,30 @@ python -m http.server 8000
 - **Stone (permanent):** must point at a **university-owned address** (e.g. `tour.gau.ac.ke`), never `github.io` or a paid "dynamic QR" service.
 - Generate it: `pip install "qrcode[pil]"` then `python tools/make_qr.py https://tour.gau.ac.ke/?from=stone`
 
+## Pilot QR
+
+Ready-to-print files are in `pilot/`:
+
+| File | Use |
+|---|---|
+| `pilot/pilot-sign.pdf` | A4 sign: print in colour, laminate, place beside the board (with permission) |
+| `pilot/qr-pilot.png` | The QR alone, high resolution |
+| `pilot/qr-pilot.svg` | The QR alone, vector (for any resizing) |
+
+The pilot QR opens `https://majidtech25.github.io/gau-qr-tour/?campaign=pilot&ref=qr`.
+Before printing many: scan the printed sign with at least 3 different phones, in sun and in shade, from about 1 m away.
+
+## Scan counter (GoatCounter)
+
+We count visits with [GoatCounter](https://www.goatcounter.com): open source, no cookies, no personal data, free for non-commercial use.
+
+1. Sign up at goatcounter.com. Pick a code, e.g. `gau-qr-tour`, so your dashboard is `https://gau-qr-tour.goatcounter.com`.
+2. In `index.html`, near the end, replace `YOUR-CODE` with that code and remove the `<!--` `-->` around the `<script>` line.
+3. Merge. Then open the dashboard:
+   - **Total visits**: everyone who opened the page.
+   - **Campaigns → `pilot`**: visits that came from scanning the pilot QR. **This is the number for the proposal.**
+4. Decide who on the team can log in to see the numbers. Note the date the pilot sign went up, so the count covers a known period.
+
 ## Workflow
 
 - `main` = what's live. Work on a branch, open a pull request, and have one teammate review it.
