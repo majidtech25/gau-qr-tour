@@ -70,12 +70,12 @@ Before printing many: scan the printed sign with at least 3 different phones, in
 
 We count visits with [GoatCounter](https://www.goatcounter.com): open source, no cookies, no personal data, free for non-commercial use.
 
-1. Sign up at goatcounter.com. Pick a code, e.g. `gau-qr-tour`, so your dashboard is `https://gau-qr-tour.goatcounter.com`.
-2. In `index.html`, near the end, replace `YOUR-CODE` with that code and remove the `<!--` `-->` around the `<script>` line.
-3. Merge. Then open the dashboard:
-   - **Total visits**: everyone who opened the page.
-   - **Campaigns → `pilot`**: visits that came from scanning the pilot QR. **This is the number for the proposal.**
-4. Decide who on the team can log in to see the numbers. Note the date the pilot sign went up, so the count covers a known period.
+**Status: live.** Dashboard: **https://majid.goatcounter.com** (account: Majid). The counter script is at the end of `index.html`.
+
+In the dashboard:
+- **Total visits**: everyone who opened the page.
+- **Campaigns → `pilot`**: visits that came from scanning the pilot QR. **This is the number for the proposal.**
+- Decide who on the team can log in to see the numbers. Note the date the pilot sign went up, so the count covers a known period.
 
 ## Workflow
 
