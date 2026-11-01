@@ -1,0 +1,8 @@
+STONE QR: ENGRAVING SPECS
+URL encoded ........ https://tour.gau.ac.ke/s
+QR version ......... 3 (29 x 29 modules), error correction H (~30% damage tolerance)
+Module (square) .... 6.21 mm
+Code width ......... 180.0 mm (without quiet zone)
+Quiet zone ......... 4 modules = 24.8 mm on every side, must stay plain and flat
+Overall size ....... 229.7 x 229.7 mm
+Cut regions ........ 66 merged outlines (dark = engraved + dark infill)

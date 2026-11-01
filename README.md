@@ -10,12 +10,12 @@ student voice, and a photo spot. Then it hands them to the official site,
 
 **Design direction:** *Welcomed · Proud · Alive*
 
-## Team
+## Team: The Stonecoders
 
 | Role | Name |
 |---|---|
 | Lead / developer | Majid |
-| Developer | [Name] |
+| Developer | Khadijun |
 | Photographer | [Name] |
 
 ## Project structure
@@ -65,6 +65,13 @@ Ready-to-print files are in `pilot/`:
 
 The pilot QR opens `https://majidtech25.github.io/gau-qr-tour/?campaign=pilot&ref=qr`.
 Before printing many: scan the printed sign with at least 3 different phones, in sun and in shade, from about 1 m away.
+
+## Stone QR (engraving)
+
+The permanent stone code lives in `stone/` (SVG, DXF, real-size A3 template, specs).
+It encodes the short address `https://tour.gau.ac.ke/s`. The `s/` page forwards visitors to the
+tour tagged `?campaign=stone&ref=qr`, so stone scans are counted separately from the pilot.
+**Sample until ICT confirms the address.** See `stone/README.md` for the engraver brief.
 
 ## Scan counter (GoatCounter)
 
