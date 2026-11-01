@@ -79,7 +79,8 @@ We count visits with [GoatCounter](https://www.goatcounter.com): open source, no
 
 ## Workflow
 
-- `main` = what's live. Work on a branch, open a pull request, and have one teammate review it.
+- `main` = what's live. Everyone owns an area and ships it: branch → pull request → self-check → **merge it yourself**.
+- Teammates review **after** the merge by commenting on the PR; the author fixes it in a follow-up PR. Full rules in `CLAUDE.md` → Git workflow.
 - Photographer: upload photos straight into `images/` via GitHub's **Add file → Upload files**. File names must match `images/README.md`.
 
 ## Before going live: checklist

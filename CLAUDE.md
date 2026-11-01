@@ -68,13 +68,25 @@ at Garissa University (GaU), then hands them to the official site
 
 ## Git workflow
 
-- `main` is live. **Don't push straight to `main`** for anything bigger than a typo.
-- Branch per task: `feat/…`, `fix/…`, `content/…`, `photos/…`.
-- Open a pull request; **someone other than the author reviews** before merging.
+**Each person owns their area and ships it themselves. Review happens after merging, not before.**
+
+| Who | Area |
+|---|---|
+| Majid | `pilot/`, `tools/`, `README.md`, the proposal |
+| Khadijun | `index.html`, `css/`, `js/` (page sections, accessibility) |
+| Photographer | `images/` |
+
+1. Work on a branch per task: `feat/…`, `fix/…`, `content/…`, `photos/…`.
+2. Open a pull request (it's the record and the place for comments), run the **self-check** below, then **merge it yourself**.
+3. Afterwards, a teammate reviews the merged PR and leaves comments or suggestions on it.
+4. The **author** makes the corrections in a follow-up PR (`fix/…`) and links it in the comment thread.
+5. Changing a file outside your area? Mention its owner in the PR so they see it.
+
+- `main` is live, so the self-check is not optional: a mistake goes straight to visitors.
 - Commit messages: short imperative summary (`Add culture section chips`), body if needed.
 - Photographer: uploading photos directly via GitHub's "Add file → Upload files" into `images/` is fine.
 
-## Before every merge: check
+## Before every merge: self-check (the author does this)
 
 - [ ] Page loads with no console errors (`python -m http.server 8000`)
 - [ ] Looks right at 390 px wide and on a real phone
