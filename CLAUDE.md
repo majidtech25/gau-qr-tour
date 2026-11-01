@@ -1,4 +1,4 @@
-# CLAUDE.md: project rules for GaU QR Tour
+# CLAUDE.md: project rules for GaU QR Tour (The Stonecoders)
 
 Read this before changing anything. It applies to every contributor and every
 coding session, human or Claude.
@@ -62,8 +62,9 @@ at Garissa University (GaU), then hands them to the official site
 
 - The stone QR must point to a **university-owned address** (e.g. `tour.gau.ac.ke`), never `github.io` and never a paid "dynamic QR" service.
 - The `github.io` address is for the laminated **pilot only**.
-- Never rename or move `index.html`, because the QR depends on the address staying the same.
+- Never rename or move `index.html` or `s/index.html`. The stone QR encodes the short address `<domain>/s`, and `s/` forwards to `../?campaign=stone&ref=qr`.
 - Every printed QR carries a tag so its scans can be counted: pilot = `?campaign=pilot&ref=qr`, stone = `?campaign=stone&ref=qr`. Links people share (the Share button) drop the tag, so shares aren't counted as scans.
+- Stone engraving files live in `stone/`. Regenerate with `python tools/make_engraving.py <url>` (add `FINAL=1` once the address is live).
 - Pilot files live in `pilot/`. Regenerate them with `python tools/make_qr.py <url>` and never edit the PNG/SVG by hand.
 
 ## Git workflow
@@ -72,7 +73,7 @@ at Garissa University (GaU), then hands them to the official site
 
 | Who | Area |
 |---|---|
-| Majid | `pilot/`, `tools/`, `README.md`, the proposal |
+| Majid | `pilot/`, `stone/`, `s/`, `tools/`, `README.md`, the proposal |
 | Khadijun | `index.html`, `css/`, `js/` (page sections, accessibility) |
 | Photographer | `images/` |
 
