@@ -30,6 +30,7 @@ at Garissa University (GaU), then hands them to the official site
 | `js/main.js` | Behaviour: photo placeholders, language switch, share |
 | `images/` | Photos. Names and sizes defined in `images/README.md` |
 | `tools/make_qr.py` | QR generator (error correction H) |
+| `map/` | "Find your way" campus route-finder (separate page; data in `map/data.js`) |
 
 ## Coding conventions
 
@@ -48,8 +49,9 @@ at Garissa University (GaU), then hands them to the official site
 3. **Consent:** no recognisable person's photo or quote without their permission.
 4. **Faith & culture:** every group gets equal space and care. Confirm names with the Dean of Students / student groups before publishing.
 5. **Remembrance (2015):** do not add any content about it until the administration decides.
-6. **Translations:** native speakers only. No machine translation shipped.
-7. **Keep it short.** If a section makes the page longer, something else gets cut. The visitor should reach the gau.ac.ke button in a few swipes.
+6. **Campus map:** `map/data.js` must come from the official plan and a walk-through. Until then it stays `demo: true` (banner shown) and is **not linked** from the tour.
+7. **Translations:** native speakers only. No machine translation shipped.
+8. **Keep it short.** If a section makes the page longer, something else gets cut. The visitor should reach the gau.ac.ke button in a few swipes.
 
 ## Accessibility & performance budget
 
@@ -73,7 +75,7 @@ at Garissa University (GaU), then hands them to the official site
 
 | Who | Area |
 |---|---|
-| Majid | `pilot/`, `stone/`, `s/`, `tools/`, `README.md`, the proposal |
+| Majid | `pilot/`, `stone/`, `s/`, `map/`, `tools/`, `README.md`, the proposal |
 | Khadijun | `index.html`, `css/`, `js/` (page sections, accessibility) |
 | Photographer | `images/` |
 

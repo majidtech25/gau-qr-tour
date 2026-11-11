@@ -1,0 +1,77 @@
+/* Campus route-finder. Builds on ../css/style.css (fonts, base colours). */
+
+:root {
+  --map-ground:   #F6EBDA;  /* map background */
+  --map-path:     #D9C3A3;  /* walkable paths */
+  --map-block:    #EADBC6;  /* buildings */
+  --map-block-tx: #5C4D3D;  /* building labels */
+  --map-place:    #3A2A1C;  /* place dots */
+  --map-start:    #14532D;  /* start marker (green) */
+  --map-end:      #C2410C;  /* destination marker + route (orange) */
+  --demo-bg:      #FEF3C7;
+  --demo-tx:      #78350F;
+}
+
+.maphead { padding: 20px var(--gap) 8px; display: flex; flex-direction: column; gap: 10px; }
+.maphead__back {
+  align-self: flex-start; min-height: 44px; display: inline-flex; align-items: center;
+  font-weight: 700; text-decoration: none; color: var(--sun-text);
+}
+.maphead h1 { font-size: 34px; }
+.demo {
+  background: var(--demo-bg); color: var(--demo-tx);
+  border-radius: 12px; padding: 10px 12px; font-size: 14px; font-weight: 500;
+}
+.demo[hidden] { display: none; }
+
+.mapmain { padding: 8px var(--gap) 32px; display: flex; flex-direction: column; gap: 16px; }
+
+/* From / to picker */
+.picker { display: grid; grid-template-columns: 1fr 48px; grid-template-rows: auto auto; gap: 10px 10px; align-items: end; }
+.picker__field { grid-column: 1; display: flex; flex-direction: column; gap: 4px; }
+.picker__field label { font-size: 13px; font-weight: 700; color: var(--ink-soft); }
+.picker select {
+  min-height: 48px; padding: 0 12px; border-radius: 12px;
+  border: 1.5px solid var(--map-path); background: #fff; color: var(--ink);
+  font: 500 16px var(--font-body);
+}
+.picker__swap {
+  grid-column: 2; grid-row: 1 / span 2; align-self: center;
+  width: 48px; height: 48px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--ink); color: var(--sand); display: grid; place-items: center;
+}
+.picker select:focus-visible, .picker__swap:focus-visible, .maphead__back:focus-visible { outline: 3px solid var(--sun-glow); outline-offset: 2px; }
+
+.summary { font: 800 22px var(--font-display); min-height: 1.2em; }
+
+/* Map */
+.mapbox { background: var(--map-ground); border-radius: 16px; overflow: hidden; }
+.map { display: block; width: 100%; height: auto; }
+.map .path { stroke: var(--map-path); stroke-width: 7; stroke-linecap: round; fill: none; }
+.map .block { fill: var(--map-block); }
+.map .block-label { fill: var(--map-block-tx); font: 700 10px var(--font-body); text-anchor: middle; }
+.map .place { fill: var(--map-place); }
+.map .place-label { fill: var(--ink); font: 700 11px var(--font-body); paint-order: stroke; stroke: var(--map-ground); stroke-width: 3px; }
+.map .route { stroke: var(--map-end); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; fill: none; stroke-dasharray: 10 7; }
+.map .marker-start { fill: var(--map-start); stroke: #fff; stroke-width: 2.5; }
+.map .marker-end { fill: var(--map-end); stroke: #fff; stroke-width: 2.5; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .map .route { animation: route-march 1s linear infinite; }
+}
+@keyframes route-march { to { stroke-dashoffset: -17; } }
+
+/* Directions */
+.steps h2 { font-size: 22px; margin-bottom: 8px; }
+.steps ol { margin: 0; padding-left: 0; list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 10px; }
+.steps li {
+  counter-increment: step; display: grid; grid-template-columns: 32px 1fr; gap: 10px; align-items: start;
+  font-size: 16px; line-height: 1.45;
+}
+.steps li::before {
+  content: counter(step);
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--sun-soft); color: var(--sun-text);
+  display: grid; place-items: center; font-weight: 700; font-size: 14px;
+}
+.steps li.is-end::before { background: var(--map-end); color: #fff; }

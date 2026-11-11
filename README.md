@@ -73,6 +73,13 @@ It encodes the short address `https://tour.gau.ac.ke/s`. The `s/` page forwards 
 tour tagged `?campaign=stone&ref=qr`, so stone scans are counted separately from the pilot.
 **Sample until ICT confirms the address.** See `stone/README.md` for the engraver brief.
 
+## Campus map ("Find your way")
+
+`map/` is a separate page: pick where you are and where you're going, and get the walking route
+drawn on the map plus step-by-step directions. Presets: `map/?from=gate-a&to=admissions`.
+**It currently uses a demo layout** (not the real campus) and isn't linked from the tour.
+How to replace it with the real campus: `map/README.md`.
+
 ## Scan counter (GoatCounter)
 
 We count visits with [GoatCounter](https://www.goatcounter.com): open source, no cookies, no personal data, free for non-commercial use.
