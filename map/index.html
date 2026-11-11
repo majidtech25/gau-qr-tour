@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Find your way — Garissa University</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#3A2A1C">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="map.css">
+</head>
+<body>
+
+  <header class="maphead">
+    <a class="maphead__back" href="../" data-i18n="map.back">← Back to the tour</a>
+    <h1 data-i18n="map.title">Find your way</h1>
+    <p class="demo" id="demo-note" data-i18n="map.demo">Demo layout: this is not the real campus map yet.</p>
+  </header>
+
+  <main class="mapmain">
+    <form class="picker" aria-label="Route">
+      <div class="picker__field">
+        <label for="from" data-i18n="map.from">You are at</label>
+        <select id="from" name="from"></select>
+      </div>
+      <button type="button" class="picker__swap" id="swap" aria-label="Swap start and destination">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4v16M7 4 3 8M7 4l4 4M17 20V4M17 20l-4-4M17 20l4-4"/></svg>
+      </button>
+      <div class="picker__field">
+        <label for="to" data-i18n="map.to">Going to</label>
+        <select id="to" name="to"></select>
+      </div>
+    </form>
+
+    <p class="summary" id="summary" role="status" aria-live="polite"></p>
+
+    <div class="mapbox">
+      <svg id="map" class="map" role="img" aria-labelledby="map-title" preserveAspectRatio="xMidYMid meet">
+        <title id="map-title">Campus map with the selected route</title>
+        <g id="layer-blocks"></g>
+        <g id="layer-paths"></g>
+        <g id="layer-route"></g>
+        <g id="layer-places"></g>
+      </svg>
+    </div>
+
+    <section class="steps" aria-labelledby="steps-title">
+      <h2 id="steps-title" data-i18n="map.directions">Directions</h2>
+      <ol id="steps"></ol>
+      <noscript><p data-i18n="map.nojs">Turn on JavaScript to get directions.</p></noscript>
+    </section>
+  </main>
+
+  <script src="../js/i18n.js"></script>
+  <script src="data.js"></script>
+  <script src="map.js"></script>
+</body>
+</html>

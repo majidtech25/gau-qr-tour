@@ -41,7 +41,25 @@ window.I18N = {
     "spot.btn":   "Share this page",
     "spot.copied": "Link copied — paste it anywhere!",
 
-    "footer.cta": "Want to study here? Visit gau.ac.ke"
+    "footer.cta": "Want to study here? Visit gau.ac.ke",
+
+    // Campus map (map/index.html). {placeholders} are filled in by map/map.js.
+    "map.back":       "← Back to the tour",
+    "map.title":      "Find your way",
+    "map.demo":       "Demo layout: this is not the real campus map yet.",
+    "map.from":       "You are at",
+    "map.to":         "Going to",
+    "map.choose":     "Choose a place",
+    "map.directions": "Directions",
+    "map.pick":       "Choose where you are and where you're going.",
+    "map.same":       "You're already there!",
+    "map.noroute":    "No route found between these places.",
+    "map.summary":    "About {min} min walk · {m} m",
+    "map.start":      "Start at {name}.",
+    "map.stepLeft":   "Walk about {m} m, then turn left.",
+    "map.stepRight":  "Walk about {m} m, then turn right.",
+    "map.arrive":     "Walk about {m} m to arrive at {name}.",
+    "map.nojs":       "Turn on JavaScript to get directions."
   },
 
   sw: {
