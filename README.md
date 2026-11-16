@@ -75,10 +75,8 @@ tour tagged `?campaign=stone&ref=qr`, so stone scans are counted separately from
 
 ## Campus map ("Find your way")
 
-`map/` is a separate page: pick where you are and where you're going, and get the walking route
-drawn on the map plus step-by-step directions. Presets: `map/?from=gate-a&to=admissions`.
-**It currently uses a demo layout** (not the real campus) and isn't linked from the tour.
-How to replace it with the real campus: `map/README.md`.
+The route-finder is its own project: **[gau-campus-map](https://github.com/majidtech25/gau-campus-map)**
+(live at `majidtech25.github.io/gau-campus-map`). The tour links to it from the footer button.
 
 ## Scan counter (GoatCounter)
 
