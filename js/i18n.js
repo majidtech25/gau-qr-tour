@@ -43,31 +43,14 @@ window.I18N = {
     "spot.copied": "Link copied — paste it anywhere!",
 
     "footer.cta": "Want to study here? Visit gau.ac.ke",
-<<<<<<< HEAD
-
-    // Campus map (map/index.html). {placeholders} are filled in by map/map.js.
-    "map.back":       "← Back to the tour",
-    "map.title":      "Find your way",
-    "map.demo":       "Demo layout: this is not the real campus map yet.",
-    "map.from":       "You are at",
-    "map.to":         "Going to",
-    "map.choose":     "Choose a place",
-    "map.directions": "Directions",
-    "map.pick":       "Choose where you are and where you're going.",
-    "map.same":       "You're already there!",
-    "map.noroute":    "No route found between these places.",
-    "map.summary":    "About {min} min walk · {m} m",
-    "map.start":      "Start at {name}.",
-    "map.stepLeft":   "Walk about {m} m, then turn left.",
-    "map.stepRight":  "Walk about {m} m, then turn right.",
-    "map.arrive":     "Walk about {m} m to arrive at {name}.",
-    "map.nojs":       "Turn on JavaScript to get directions."
-=======
->>>>>>> 0231798 (latestcommit)
+    "footer.map": "Find your way on campus",
   },
 
-  // DRAFT — needs review by a native Kiswahili speaker
-  sw: {
+  // DRAFT by Khadijun: needs review by a native Kiswahili speaker.
+  // Parked as "sw_draft" so it doesn't go live yet (CLAUDE.md rule 7). When a
+  // native speaker has checked every line, rename it back to "sw" and the
+  // SW button will use it. Until then SW falls back to English.
+  sw_draft: {
     "hero.eyebrow": "Karibu",
     "hero.title": "Uko katikati ya Chuo Kikuu cha Garissa.",
     "hero.lead": "Mtazamo wa dakika moja wa maisha hapa.",
