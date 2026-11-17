@@ -12,10 +12,10 @@ window.I18N = {
     "hero.eyebrow": "Karibu · Welcome",
     "hero.title": "You're at the heart of Garissa University.",
     "hero.lead": "A one-minute look at life here.",
-    "hero.s1": "Sunrise",
-    "hero.s2": "Afternoon",
+    "hero.s1": "The board",
+    "hero.s2": "Welcome",
     "hero.s3": "Students",
-    "hero.s4": "Night",
+    "hero.s4": "Main gate at night",
     "hero.pause": "Pause slideshow",
     "hero.play": "Play slideshow",
 
@@ -31,7 +31,7 @@ window.I18N = {
     "culture.title": "Many faiths. Many cultures.",
     "culture.one": "One GaU.",
     "culture.body":
-      "Students from different communities, counties and religions, pray and celebrate side by side here.",
+      "Students from different communities, counties and religions pray and celebrate side by side here.",
 
     "proud.title": "Proudly GaU",
     "proud.f1": "Founded as a constituent college of Moi University",
@@ -46,18 +46,14 @@ window.I18N = {
     "footer.map": "Find your way on campus",
   },
 
-  // DRAFT by Khadijun: needs review by a native Kiswahili speaker.
-  // Parked as "sw_draft" so it doesn't go live yet (CLAUDE.md rule 7). When a
-  // native speaker has checked every line, rename it back to "sw" and the
-  // SW button will use it. Until then SW falls back to English.
+  // Kiswahili by Khadijun, switched on for the pilot. Still to be checked
+  // line by line by a native speaker (CLAUDE.md rule 7). Missing keys fall
+  // back to English (hero.s1, s2, s4 were removed when the photos changed).
   sw: {
     "hero.eyebrow": "Karibu",
     "hero.title": "Uko katikati ya Chuo Kikuu cha Garissa.",
     "hero.lead": "Mtazamo wa dakika moja wa maisha hapa.",
-    "hero.s1": "Macheo",
-    "hero.s2": "Alasiri",
-    "hero.s3": "wanafunzi",
-    "hero.s4": "Usiku",
+    "hero.s3": "Wanafunzi",
     "hero.pause": "Sitisha onyesho la picha",
     "hero.play": "Cheza onyesho la picha",
 
@@ -73,7 +69,7 @@ window.I18N = {
     "culture.title": "Imani nyingi. Tamaduni nyingi.",
     "culture.one": "GaU moja.",
     "culture.body":
-      "Wanafunzi kutoka jamii,kaunti na dini mbalimbali wanasherehekea pamoja",
+      "Wanafunzi kutoka jamii, kaunti na dini mbalimbali wanasherehekea pamoja",
 
     "proud.title": "Fahari ya GaU",
     "proud.f1": "Ilianzishwa kama chuo shiriki cha Chuo Kikuu cha Moi",
