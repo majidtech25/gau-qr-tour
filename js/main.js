@@ -189,4 +189,20 @@
       });
     });
   }
+
+  /* ---------- 6. Graduation status by date ----------
+     "Coming up" -> "Tomorrow!" -> "Today!" -> "Congratulations, graduates!"
+     Uses the visitor's local date. Without JS the line reads "Coming up". */
+  var grad = document.querySelector("[data-event-date]");
+  if (grad) {
+    var status = grad.querySelector(".grad__status");
+    var parts = grad.getAttribute("data-event-date").split("-");
+    var event = new Date(+parts[0], +parts[1] - 1, +parts[2]);
+    var now = new Date();
+    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var days = Math.round((event - today) / 86400000);
+    var key = days > 1 ? "proud.gradSoon" : days === 1 ? "proud.gradTomorrow" : days === 0 ? "proud.gradToday" : "proud.gradPast";
+    status.setAttribute("data-i18n", key);
+    status.textContent = t(document.documentElement.lang || "en", key);
+  }
 })();
