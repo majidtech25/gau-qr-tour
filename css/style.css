@@ -19,6 +19,8 @@
   --sun-soft: #fdebd8; /* chip background */
   --green: #14532d; /* "Proudly GaU" panel */
   --gold: #fde68a; /* numbers on green */
+  --backdrop: rgba(20, 14, 8, 0.86); /* behind the enlarged photo */
+  --card: #ffffff; /* enlarged photo card */
 
   --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
@@ -494,4 +496,96 @@ a {
   html {
     scroll-behavior: smooth;
   }
+}
+
+/* ---------- Photo viewer (tap a photo to enlarge) ---------- */
+.is-zoomable {
+  cursor: zoom-in;
+}
+.is-zoomable:focus-visible {
+  outline: 3px solid var(--sun-glow);
+  outline-offset: 2px;
+}
+.slide:not(.is-active) {
+  pointer-events: none; /* taps go to the visible slide */
+}
+.viewer {
+  width: min(100vw - 24px, 560px);
+  max-width: none;
+  max-height: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  overflow: visible;
+}
+.viewer::backdrop {
+  background: var(--backdrop);
+}
+.viewer__card {
+  margin: 0;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+.viewer__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 72svh;
+  object-fit: contain;
+  background: var(--ink);
+}
+.viewer__cap {
+  padding: 14px 18px 16px;
+  font: 700 16px/1.35 var(--font-body);
+  color: var(--ink);
+}
+.viewer__cap:empty {
+  display: none;
+}
+.viewer__close {
+  position: absolute;
+  top: -14px;
+  right: -6px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--card);
+  color: var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+.viewer__close:focus-visible {
+  outline: 3px solid var(--sun-glow);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .viewer[open] .viewer__card {
+    animation: viewer-in 0.22s ease-out;
+  }
+}
+@keyframes viewer-in {
+  from {
+    transform: scale(0.94);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+body.has-viewer {
+  overflow: hidden;
 }

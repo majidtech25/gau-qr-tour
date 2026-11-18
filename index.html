@@ -352,6 +352,29 @@
       </p>
     </footer>
 
+    <!-- Photo viewer: a tapped photo opens here as a large card (main.js section 5) -->
+    <dialog class="viewer" id="viewer" aria-label="Photo">
+      <figure class="viewer__card">
+        <img class="viewer__img" src="" alt="" />
+        <figcaption class="viewer__cap"></figcaption>
+      </figure>
+      <button type="button" class="viewer__close">
+        <span class="visually-hidden" data-i18n="viewer.close">Close</span>
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.4"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+    </dialog>
+
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
 
