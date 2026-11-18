@@ -124,14 +124,24 @@ a {
 }
 .logo {
   display: inline-flex;
-  padding: 5px 9px;
-  border-radius: 10px;
-  background: var(--card); /* the logo has a white background */
+  align-items: center;
+  gap: 8px;
+  color: var(--sand);
 }
-.logo img {
+.logo__seal {
   display: block;
-  width: 152px;
-  height: 32px;
+  width: 38px;
+  height: 38px;
+}
+/* Wordmark traced from the official logo (images/brand/gau-wordmark.svg);
+   used as a mask so it takes the header's text colour. */
+.logo__word {
+  display: block;
+  height: 30px;
+  width: 155px;
+  background: currentColor;
+  -webkit-mask: url("../images/brand/gau-wordmark.svg") center / contain no-repeat;
+  mask: url("../images/brand/gau-wordmark.svg") center / contain no-repeat;
 }
 
 .lang {
@@ -595,4 +605,16 @@ a {
 }
 body.has-viewer {
   overflow: hidden;
+}
+
+/* Very small phones: shrink the logo so it never pushes the page wider */
+@media (max-width: 359px) {
+  .logo__seal {
+    width: 32px;
+    height: 32px;
+  }
+  .logo__word {
+    height: 24px;
+    width: 124px;
+  }
 }
