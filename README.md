@@ -78,6 +78,10 @@ tour tagged `?campaign=stone&ref=qr`, so stone scans are counted separately from
 The route-finder is its own project: **[gau-campus-map](https://github.com/majidtech25/gau-campus-map)**
 (live at `majidtech25.github.io/gau-campus-map`). The tour links to it from the footer button.
 
+**Printable QR (tour):** `pilot/GaU-Tour-QR.pdf`, one A4 page, encodes
+`https://majidtech25.github.io/gau-qr-tour/?campaign=pilot&ref=qr`. Print at 100%.
+The campus map has its own file: `GaU-Campus-Map-QR.pdf` in the gau-campus-map repo.
+
 ## Scan counter (GoatCounter)
 
 We count visits with [GoatCounter](https://www.goatcounter.com): open source, no cookies, no personal data, free for non-commercial use.
