@@ -21,6 +21,8 @@
   --gold: #fde68a; /* numbers on green */
   --green-2: #1e6b3d; /* graduation highlight on green */
   --mint: #bbf7d0; /* small text on green */
+  --shadow-btn: 0 6px 16px rgba(20, 83, 45, 0.35); /* raised button */
+  --shine: rgba(255, 255, 255, 0.28); /* light sweep on the map button */
   --backdrop: rgba(20, 14, 8, 0.86); /* behind the enlarged photo */
   --card: #ffffff; /* enlarged photo card */
 
@@ -487,11 +489,6 @@ a {
   background: var(--ink);
   color: var(--sand);
 }
-.btn--outline {
-  background: transparent;
-  color: var(--ink);
-  box-shadow: inset 0 0 0 2px var(--ink);
-}
 .btn:focus-visible,
 .lang button:focus-visible {
   outline: 3px solid #fdba74;
@@ -677,4 +674,96 @@ body.has-viewer {
 .moments__date {
   font-weight: 700;
   color: var(--gold);
+}
+
+/* ---------- Button feel (all .btn) ----------
+   Press: sinks a little. Hover (mouse only): lifts. */
+.btn {
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background-color 0.18s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+}
+@media (hover: hover) {
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* ---------- "Find your way on campus" ---------- */
+.btn--map {
+  overflow: hidden;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 0 18px 0 8px;
+  min-height: 58px;
+  border-radius: 30px;
+  background: var(--green);
+  color: #fff;
+  box-shadow: var(--shadow-btn);
+}
+.btn__pin {
+  flex: 0 0 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--green);
+}
+.btn__label {
+  flex: 1;
+  text-align: left;
+}
+.btn__arrow {
+  transition: transform 0.18s ease;
+}
+.btn--map:active {
+  box-shadow: 0 2px 6px rgba(20, 83, 45, 0.35);
+}
+@media (hover: hover) {
+  .btn--map:hover {
+    box-shadow: 0 10px 22px rgba(20, 83, 45, 0.4);
+  }
+  .btn--map:hover .btn__arrow {
+    transform: translateX(4px);
+  }
+}
+
+/* Motion only for visitors who haven't asked their phone for less motion */
+@media (prefers-reduced-motion: no-preference) {
+  /* the pin hops every few seconds */
+  .btn__pin svg {
+    animation: pin-hop 3.2s ease-in-out infinite;
+  }
+  /* a light sweep crosses the button */
+  .btn--map::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40%;
+    width: 30%;
+    background: linear-gradient(100deg, transparent, var(--shine), transparent);
+    transform: skewX(-18deg);
+    animation: shine 4.8s ease-in-out infinite;
+    pointer-events: none;
+  }
+  .btn--map:active .btn__pin svg {
+    animation: none;
+    transform: translateY(2px);
+  }
+}
+@keyframes pin-hop {
+  0%, 70%, 100% { transform: translateY(0); }
+  76% { transform: translateY(-5px); }
+  82% { transform: translateY(0); }
+  87% { transform: translateY(-2px); }
+  92% { transform: translateY(0); }
+}
+@keyframes shine {
+  0%, 55% { left: -40%; }
+  85%, 100% { left: 120%; }
 }
