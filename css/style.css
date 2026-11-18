@@ -19,6 +19,8 @@
   --sun-soft: #fdebd8; /* chip background */
   --green: #14532d; /* "Proudly GaU" panel */
   --gold: #fde68a; /* numbers on green */
+  --green-2: #1e6b3d; /* graduation highlight on green */
+  --mint: #bbf7d0; /* small text on green */
   --backdrop: rgba(20, 14, 8, 0.86); /* behind the enlarged photo */
   --card: #ffffff; /* enlarged photo card */
 
@@ -617,4 +619,62 @@ body.has-viewer {
     height: 24px;
     width: 124px;
   }
+}
+
+/* ---------- Proud moments (inside Proudly GaU) ---------- */
+.grad {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 14px;
+  border-radius: 14px;
+  background: var(--green-2);
+}
+.grad__icon {
+  flex: 0 0 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--gold);
+  color: var(--green);
+}
+.grad__status {
+  display: inline-block;
+  margin-bottom: 4px;
+  padding: 2px 9px;
+  border-radius: 10px;
+  background: var(--gold);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.grad__title {
+  font: 800 19px/1.2 var(--font-display);
+}
+.grad__when {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--mint);
+}
+.moments {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.moments li {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.moments__date {
+  font-weight: 700;
+  color: var(--gold);
 }
