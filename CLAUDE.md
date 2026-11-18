@@ -68,6 +68,12 @@ at Garissa University (GaU), then hands them to the official site
 - Stone engraving files live in `stone/`. Regenerate with `python tools/make_engraving.py <url>` (add `FINAL=1` once the address is live).
 - Pilot files live in `pilot/`. Regenerate them with `python tools/make_qr.py <url>` and never edit the PNG/SVG by hand.
 
+## Cache-busting (do this on every CSS/JS change)
+GitHub Pages lets phones keep CSS/JS for 10 minutes. `index.html` loads them as
+`css/style.css?v=YYYYMMDDx` and `js/*.js?v=YYYYMMDDx`. **Whenever you change a CSS or JS
+file, bump that version in `index.html`** (e.g. `20261118b` → `20261118c`) so visitors
+get the new files at once instead of a half-updated page.
+
 ## Git workflow
 
 **Each person owns their area and ships it themselves. Review happens after merging, not before.**
