@@ -123,8 +123,15 @@ a {
   padding: 10px var(--gap);
 }
 .logo {
-  font: 800 18px var(--font-display);
-  letter-spacing: 0.5px;
+  display: inline-flex;
+  padding: 5px 9px;
+  border-radius: 10px;
+  background: var(--card); /* the logo has a white background */
+}
+.logo img {
+  display: block;
+  width: 152px;
+  height: 32px;
 }
 
 .lang {
