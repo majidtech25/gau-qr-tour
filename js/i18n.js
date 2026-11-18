@@ -44,6 +44,8 @@ window.I18N = {
 
     "footer.cta": "Want to study here? Visit gau.ac.ke",
     "footer.map": "Find your way on campus",
+    "viewer.open": "Enlarge photo",
+    "viewer.close": "Close",
   },
 
   // Kiswahili by Khadijun, switched on for the pilot. Still to be checked

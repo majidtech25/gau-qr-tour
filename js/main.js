@@ -85,6 +85,9 @@
       slides[current].classList.remove("is-active");
       current = i;
       slides[current].classList.add("is-active");
+      slides.forEach(function (sl, k) {
+        if (sl.classList.contains("is-zoomable")) sl.tabIndex = k === current ? 0 : -1;
+      });
     };
 
     var next = function () {
@@ -122,5 +125,68 @@
 
     labelToggle();
     refresh();
+  }
+
+  /* ---------- 5. Photo viewer ----------
+     Tap (or Enter/Space on) a photo to see it large in a card, with its
+     caption. Close with the X, a tap outside, or Esc. Only real photos
+     (not "missing" placeholders) can be opened. Without JS nothing changes. */
+  var viewer = document.getElementById("viewer");
+  if (viewer && typeof viewer.showModal === "function") {
+    var vImg = viewer.querySelector(".viewer__img");
+    var vCap = viewer.querySelector(".viewer__cap");
+    var lang = function () { return document.documentElement.lang || "en"; };
+
+    var captionOf = function (fig) {
+      var box = fig.closest(".slide, .card, .culture__item");
+      var c = box && box.querySelector("figcaption, p");
+      return c ? c.textContent.trim() : "";
+    };
+
+    var label = function (fig) {
+      var img = fig.querySelector("img");
+      fig.setAttribute("aria-label", t(lang(), "viewer.open") + ": " + (img.alt || captionOf(fig)));
+    };
+
+    var open = function (fig) {
+      if (fig.classList.contains("is-missing")) return;
+      var img = fig.querySelector("img");
+      vImg.src = img.currentSrc || img.src;
+      vImg.alt = img.alt;
+      vCap.textContent = captionOf(fig);
+      document.body.classList.add("has-viewer");
+      viewer.showModal();
+    };
+
+    var enable = function (fig) {
+      if (fig.classList.contains("is-zoomable") || fig.classList.contains("is-missing")) return;
+      fig.classList.add("is-zoomable");
+      fig.setAttribute("role", "button");
+      fig.tabIndex = fig.classList.contains("slide") && !fig.classList.contains("is-active") ? -1 : 0;
+      label(fig);
+      fig.addEventListener("click", function () { open(fig); });
+      fig.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(fig); }
+      });
+    };
+
+    document.querySelectorAll(".photo:not(.photo--avatar)").forEach(function (fig) {
+      var img = fig.querySelector("img");
+      if (!img) return;
+      if (img.complete && img.naturalWidth > 0) enable(fig);
+      else img.addEventListener("load", function () { enable(fig); });
+    });
+
+    viewer.querySelector(".viewer__close").addEventListener("click", function () { viewer.close(); });
+    viewer.addEventListener("click", function (e) { if (e.target === viewer) viewer.close(); });
+    viewer.addEventListener("close", function () {
+      document.body.classList.remove("has-viewer");
+      vImg.removeAttribute("src");
+    });
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () {
+        document.querySelectorAll(".is-zoomable").forEach(label);
+      });
+    });
   }
 })();
